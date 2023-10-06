@@ -16,11 +16,6 @@
           - git
         state: present
 
-    - name: Check if Maven service is running
-      service:
-        name: apache-maven
-        state: started
-
     - name: Create webapp directory
       file:
         path: /home/dmitry/webapp
