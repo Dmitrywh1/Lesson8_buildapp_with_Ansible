@@ -58,7 +58,7 @@
       apt:
         update_cache: yes
 
-    - name: Ensure required packages are started
+    - name: Ensure required packages are present
       apt:
         name:
           - openjdk-11-jdk
