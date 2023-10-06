@@ -20,7 +20,7 @@
     - name: Clone repository
       git:
         repo: https://github.com/yankils/hello-world.git
-        dest: /home
+        dest: /home/
 
     - name: Build webapp
       command: mvn package
