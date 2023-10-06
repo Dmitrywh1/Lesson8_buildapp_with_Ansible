@@ -17,10 +17,16 @@
           - tomcat9
         state: present
 
+    - name: Create webapp directory
+      file:
+        path: /home/dmitry/webapp
+        state: directory
+        mode: '0755'
+
     - name: Clone repository
       git:
         repo: https://github.com/yankils/hello-world.git
-        dest: /home/dmitry/hello-world
+        dest: /home/dmitry/webapp
         update: yes
 
     - name: Build webapp
