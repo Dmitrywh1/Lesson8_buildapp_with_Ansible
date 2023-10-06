@@ -33,6 +33,11 @@
       args:
         chdir: /home/dmitry/webapp
 
+- name: Copy war
+  hosts: build
+  become: true
+
+  tasks:
     - name: Copy war from remote host to local
       fetch:
         src: /home/dmitry/webapp/webapp/target/webapp.war
