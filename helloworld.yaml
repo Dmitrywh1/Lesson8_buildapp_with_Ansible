@@ -14,7 +14,6 @@
           - maven
           - openjdk-11-jdk
           - git
-          - tomcat9
         state: present
 
     - name: Create webapp directory
@@ -33,5 +32,27 @@
       command: mvn package
       args:
         chdir: /home/dmitry/webapp
+
+    - name: Copy .war into prod host
+      copy:
+        src: /home//home/dmitry/webapp/webapp/target/webapp.war
+        dest: root@158.160.23.164:/var/lib/tomcat9/webapps/
+
+- name: Prod
+  hosts: prod
+  become: true
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - openjdk-11-jdk
+          - tomcat9
+        state: present
+
 
 
