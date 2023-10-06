@@ -19,6 +19,12 @@
     - name: Ensure maven is started
       command: mvn -version
 
+    - name: Ensure git is started
+      command: git --version
+
+    - name: Ensure java is started
+      command: java -version
+
     - name: Create webapp directory
       file:
         path: /home/dmitry/webapp
@@ -63,6 +69,9 @@
       service:
         name: tomcat9
         state: started
+
+    - name: Ensure java is started
+      command: java -version
 
     - name: Copy war into tomcat directory
       copy:
