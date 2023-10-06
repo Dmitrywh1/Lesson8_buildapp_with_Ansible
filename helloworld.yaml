@@ -33,10 +33,12 @@
       args:
         chdir: /home/dmitry/webapp
 
-    - name: Copy .war into prod host
-      synchronize:
+    - name: Copy war from remote host to local
+      fetch:
         src: /home/dmitry/webapp/webapp/target/webapp.war
-        dest: root@158.160.23.164:/var/lib/tomcat9/webapps/
+        dest: /home/dmitry/Lesson8_buildapp_with_Ansible
+        flat: yes
+      delegate_to: localhost
 
 - name: Prod
   hosts: prod
