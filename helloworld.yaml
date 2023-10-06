@@ -49,12 +49,17 @@
       apt:
         update_cache: yes
 
-    - name: Install required packages
+    - name: Ensure required packages are started
       apt:
         name:
           - openjdk-11-jdk
           - tomcat9
         state: present
+
+    - name: Ensure tomcat is started
+      service:
+        name: tomcat9
+        state: started
 
     - name: Copy war into tomcat directory
       copy:
