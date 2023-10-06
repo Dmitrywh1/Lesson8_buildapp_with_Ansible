@@ -33,7 +33,7 @@
       args:
         chdir: /home/dmitry/webapp
 
-    - name: Copy
+    - name: Copy war in localhost
       fetch:
         src: /home/dmitry/webapp/webapp/target/webapp.war
         dest: ./
@@ -58,7 +58,7 @@
 
     - name: Copy war into tomcat directory
       copy:
-        srс: webapp.war
+        src: webapp.war
         dest: /var/lib/tomcat9/webapps
 
 
