@@ -16,12 +16,9 @@
           - git
         state: present
 
-    - name: Ensure required packages are started
+    - name: Ensure maven is started
       service:
-        name:
-          - maven
-          - openjdk-11-jdk
-          - git
+        name: maven
         state: started
 
     - name: Create webapp directory
