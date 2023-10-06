@@ -58,7 +58,7 @@
 
     - name: Copy war into tomcat directory
       copy:
-        scr: webapp.war
+        srс: webapp.war
         dest: /var/lib/tomcat9/webapps
 
 
