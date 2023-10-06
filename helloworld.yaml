@@ -39,11 +39,9 @@
 
   tasks:
     - name: Copy war from remote host to local
-      fetch:
+      copy:
         src: /home/dmitry/webapp/webapp/target/webapp.war
-        dest: /home/dmitry/Lesson8_buildapp_with_Ansible
-        flat: yes
-      delegate_to: localhost
+        dest: /home
 
 - name: Prod
   hosts: prod
