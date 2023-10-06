@@ -16,6 +16,9 @@
           - git
         state: present
 
+    - name: Ensure maven is started
+      command: mvn -version
+
     - name: Create webapp directory
       file:
         path: /home/dmitry/webapp
