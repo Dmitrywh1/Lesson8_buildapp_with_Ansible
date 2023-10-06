@@ -38,10 +38,12 @@
   become: true
 
   tasks:
-    - name: Copy war from remote host to local
-      copy:
-        src: /home/dmitry/webapp/webapp/target/webapp.war
-        dest: /home
+    name: Copy
+    fetch:
+      src: /home/dmitry/webapp/webapp/target
+      dest: ./
+      flat: yes
+    become: yes
 
 - name: Prod
   hosts: prod
