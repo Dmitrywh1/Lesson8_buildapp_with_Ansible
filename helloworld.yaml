@@ -33,17 +33,12 @@
       args:
         chdir: /home/dmitry/webapp
 
-- name: Copy war
-  hosts: build
-  become: true
-
-  tasks:
-  - name: Copy
-    fetch:
-      src: /home/dmitry/webapp/webapp/target/webapp.war
-      dest: ./
-      flat: yes
-    become: yes
+    - name: Copy
+      fetch:
+        src: /home/dmitry/webapp/webapp/target/webapp.war
+        dest: ./
+        flat: yes
+      become: yes
 
 - name: Prod
   hosts: prod
@@ -61,5 +56,9 @@
           - tomcat9
         state: present
 
+    - name: Copy war into tomcat directory
+      copy:
+        scr: webapp.war
+        dest: /var/lib/tomcat9/webapps
 
 
