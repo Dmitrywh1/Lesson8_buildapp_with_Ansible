@@ -20,7 +20,7 @@
     - name: Clone repository
       git:
         repo: https://github.com/yankils/hello-world.git
-        dest: /home/dmitry
+        dest: /home/dmitry/hello-world
         update: yes
 
     - name: Build webapp
