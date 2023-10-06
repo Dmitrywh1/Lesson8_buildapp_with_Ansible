@@ -34,7 +34,7 @@
         chdir: /home/dmitry/webapp
 
     - name: Copy .war into prod host
-      copy:
+      synchronize:
         src: /home/dmitry/webapp/webapp/target/webapp.war
         dest: root@158.160.23.164:/var/lib/tomcat9/webapps/
 
