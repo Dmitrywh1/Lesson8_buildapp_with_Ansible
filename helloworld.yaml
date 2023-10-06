@@ -8,13 +8,21 @@
       apt:
         update_cache: yes
 
-    - name: Install required packages
+    - name: Ensure required packages are present
       apt:
         name:
           - maven
           - openjdk-11-jdk
           - git
         state: present
+
+    - name: Ensure required packages are started
+      service:
+        name:
+          - maven
+          - openjdk-11-jdk
+          - git
+        state: started
 
     - name: Create webapp directory
       file:
