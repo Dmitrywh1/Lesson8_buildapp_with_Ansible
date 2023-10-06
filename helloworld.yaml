@@ -40,7 +40,7 @@
   tasks:
   - name: Copy
     fetch:
-      src: /home/dmitry/webapp/webapp/target
+      src: /home/dmitry/webapp/webapp/target/webapp.war
       dest: ./
       flat: yes
     become: yes
