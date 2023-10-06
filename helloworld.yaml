@@ -16,16 +16,16 @@
           - git
         state: present
 
-    - name: Ensure maven is started
-      service:
-        name: maven
-        state: started
-
     - name: Create webapp directory
       file:
         path: /home/dmitry/webapp
         state: directory
         mode: '0755'
+
+    - name: Ensure maven is started
+      service:
+        name: mvn
+        state: started
 
     - name: Clone repository
       git:
