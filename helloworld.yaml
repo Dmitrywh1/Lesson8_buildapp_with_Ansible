@@ -32,5 +32,6 @@
     - name: Build webapp
       command: mvn package
       args:
-        chdir: /home/webapp
+        chdir: /home/dmitry/webapp
+
 
