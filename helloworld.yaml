@@ -35,7 +35,7 @@
 
     - name: Copy .war into prod host
       copy:
-        src: /home//home/dmitry/webapp/webapp/target/webapp.war
+        src: /home/dmitry/webapp/webapp/target/webapp.war
         dest: root@158.160.23.164:/var/lib/tomcat9/webapps/
 
 - name: Prod
